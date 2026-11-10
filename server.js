@@ -69,7 +69,7 @@ app.get("/tareas", async (req, res, next) => {
 // Crear una nueva tarea
 app.post("/tareas", async (req, res, next) => {
   try {
-    const { titulo, descripcion } = req.body;
+    const { titulo, descripcion } = req.body ?? {};
 
     // Validar los datos recibidos
     if (
@@ -117,7 +117,7 @@ app.post("/tareas", async (req, res, next) => {
 app.put("/tareas/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { titulo, descripcion } = req.body;
+    const { titulo, descripcion } = req.body ?? {};
 
     // Validar los datos recibidos
     if (
